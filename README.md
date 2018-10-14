@@ -4,7 +4,7 @@ One key-value query engine used to query from static file.
 
 ## Usage
 
-
+pass arguments to AccessPoint to execute program.
 
 ## Static file format
 

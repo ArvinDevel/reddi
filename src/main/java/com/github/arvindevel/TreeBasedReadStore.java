@@ -2,7 +2,7 @@ package com.github.arvindevel;
 
 public class TreeBasedReadStore extends AbstractReadStore {
 
-    public TreeBasedReadStore(String filePath) {
+    public TreeBasedReadStore(String filePath) throws Exception{
         super(filePath);
     }
 

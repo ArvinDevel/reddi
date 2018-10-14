@@ -6,22 +6,24 @@ import java.util.Scanner;
 public class AccessPoint {
     private static AbstractReadStore readStore;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         if (args.length < 1) {
             throw new RuntimeException("Require file path as first argument");
         }
         String filePath = args[0];
         File file = new File(filePath);
-        if (! file.exists()) {
+        if (!file.exists()) {
             throw new RuntimeException("File path is not valid");
         }
 
-        if (args.length ==2 ) {
-            if("0".equals(args[1])) {
-
+        if (args.length == 2) {
+            if ("0".equals(args[1])) {
+                readStore = new SortBasedReadStore(args[0]);
             } else {
-
+                readStore = new TreeBasedReadStore(args[0]);
             }
+        } else {
+            readStore = new SortBasedReadStore(args[0]);
         }
 
         Scanner scanner = new Scanner(System.in);
